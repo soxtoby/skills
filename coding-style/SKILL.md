@@ -47,23 +47,4 @@ This only applies when using the `stylemap` NPM package for styling.
   - State styles that modify the appearance based on user interaction or other conditions are prefixed with `is-` and suffixed with `-state` in the form `is-componentName-state`.
 
 ## Tests
-- Tests should focus on inputs and outputs rather than internal implementation details.
-- Prefer real classes or fake implementations over mocks.
-- When desired behavior changes, test for the new behavior, but avoid testing that the old behavior no longer exists.
-
-## EasyAssertions
-
-This applies to C# tests using the EasyAssertions library.
-- Chain assertions with `.And` and `.And()` where possible.
-- `.And` should always be used immediately for an assertion and never stored in a variable. It should be on the same line as the assertion it is chaining to.
-- One assertion per line. e.g.
-  ```csharp
-  // Chained assertions over multiple lines
-  _sut.GetTextCollectionProvider(_packageName, CancellationToken.None)
-      .ShouldComplete()
-      .And.ShouldBeA<DataSourceGeneratedSettingTextCollectionProvider>()
-      .And.TextCollection(CultureInfo.GetCultureInfo("en-US")).Get("TestLabel").ShouldBe("Package label");
-  
-  // Single short assertion can be on one line
-  _sut.Version.ShouldBe("1.0.0");
-  ```
+See the writing-tests skill for general advice on writing tests.
