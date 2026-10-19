@@ -45,6 +45,8 @@ Run checks appropriate to the change, including the failing build/test when appl
 
 Keep changes awaiting review separate from changes authorized for push. A local fix or failed push is not a published fix; report its actual state. Check CI for the pushed commit, since results from an earlier head do not validate it.
 
+Once all comments are addressed or declined with justification and all resulting fixes are pushed, refresh reviews and request re-review from every reviewer still requesting changes (`CHANGES_REQUESTED`). Confirm each request succeeded or is already pending; retain reviewer and review IDs across wakes to avoid duplicate requests for the same review.
+
 ## 4. Keep watching
 
 After each batch, refresh PR state and repeat for new failures, conflicts, and comments. Retain the last inspected head, handled comment IDs, pending decisions, and validation results across wakes to avoid duplicate work or replies.
