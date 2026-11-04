@@ -11,7 +11,7 @@ description: General code style advice. Use when writing any code, reviewing cod
 - Keep comments sparse and useful. Use them to explain why, not to narrate what the code already says.
 
 ## Code structure
-- Functions should always be defined below where they are used in the same file, so control flow reads from top to bottom.
+- Functions should always be defined below (after) where they are used in the same file, so control flow reads from top to bottom.
 - Functions should contain roughly a single level of abstraction. For example, a function that fetches data from an API should not be dealing with low-level HTTP request details, and a function that handles low-level HTTP requests should not be concerned with how the data is used after it is fetched.
 - Prefer method chaining (for example, `map`/`filter`) over explicit loops. However, do not use `reduce`/`aggregate`; use an explicit loop instead when a fold is needed.
 - Lean on available native methods, helper methods, and library functions and their behavior, rather than writing custom implementations. For example, if a library function throws an argument error when given an invalid input, don't check for that invalid input and throw your own error. Instead, let the library function throw the error and handle it appropriately.
@@ -20,7 +20,7 @@ description: General code style advice. Use when writing any code, reviewing cod
 
 ## Naming
 - Give related names a shared term for what they have in common, plus a differentiating term for how they contrast: `sourcePath`/`destinationPath`, `minWidth`/`maxWidth`.
-- Qualify every `name` with the kind of name it holds: `displayName`, `fileName`, `loginName`.
+- Qualify every variable called `name` with the kind of name it holds: `displayName`, `fileName`, `loginName`.
 - Suffix measurements with their unit: `sizeMb`, `timeoutMs`, `widthPx`.
 - Name a primitive that references something after the thing it references and the kind of reference: a GUID pointing at a parent resource is `parentResourceId`.
 - Case constants like any other member of the same kind: `maxRetries` as a module-level TypeScript constant, `MaxRetries` as a C# `const` field.
