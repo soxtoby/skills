@@ -1,0 +1,11 @@
+---
+name: ship
+description: Use when taking a branch through review, PR creation, and a babysitting handoff.
+---
+
+# Ship
+
+1. Run two independent, read-only `delegate_task` reviews in parallel: the latest Astra and latest Opus, both at `xhigh`. Both review the same branch head and the full diff from its merge base with the target branch (`git diff <target>...<head>`).
+2. Once both reviews finish, apply [review-feedback](../review-feedback/SKILL.md) to their findings. Proceed when every finding is addressed or declined with justification.
+3. Push the branch and create a PR using [create-pr](../create-pr/SKILL.md).
+4. Use `t3_thread_launch` to start a new thread in a new worktree with the PR branch checked out at the published head. Use the user's preferred environment, with load balancing when available. Tell the thread to use [babysit](../babysit/SKILL.md) for this PR and every PR stacked onto it, including future layers.
