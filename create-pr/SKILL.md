@@ -11,12 +11,12 @@ description: Use when creating a pull request or drafting or editing its title o
 
 ## PR body
 
-Write the body as short prose, embedded images, and decision bullets, without headings or standalone section labels. Use this order; the goal and final line are required:
+Write the body as short prose, embedded images, and decision bullets, without headings or standalone section labels. Use this order; the goal and merge risk are required:
 
 - **Goal:** One or two sentences explaining what the PR aims to achieve and why it matters. Describe the problem resolved or capability enabled; keep implementation detail to the decision trade-offs below.
 - **Screenshots:** When the outcome is visual and the environment permits, capture the changed behavior and embed the fewest screenshots that demonstrate the goal was achieved. Add a before image only when comparison helps. Use actual captures with image URLs or attachments accessible to reviewers. Omit screenshots when inapplicable or unavailable; report a capture or attachment blocker in the handoff instead.
 - **Contentious decisions:** One short bullet per decision a reasonable reviewer might dispute, stating the choice, rationale, and material trade-off. Omit these bullets when there are none.
+- **Merge risk:** One line, `**Merge risk:** <Low|Medium|High>, <justification>.` Rate it from the blast radius and how cleanly the change reverts, grounding both in the change, including affected consumers and persistent state. Justify in one short clause naming only the factors that set the rating.
 - **Issue:** One line, `<keyword> <issue reference>`, with the keyword chosen by how the PR affects the issue: `Fixes` when it resolves a bug, `Completes` when it finishes a non-bug issue, `Part of` when it delivers some of the issue, and `Related to` when it bears on the issue without delivering any of it. Omit this line when there is no associated issue.
-- **Final line:** `**Merge risk:** <Low|Medium|High>, <justification>.` Rate it from the blast radius and how cleanly the change reverts, grounding both in the change, including affected consumers and persistent state. Justify in one short clause naming only the factors that set the rating.
 
 Keep the body focused on these elements. Exclude testing notes, test plans, and validation checklists. Omit placeholders and routine implementation summaries.
