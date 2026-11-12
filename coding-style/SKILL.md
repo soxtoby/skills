@@ -5,13 +5,15 @@ description: General code style advice. Use when writing any code, reviewing cod
 
 # Apply Coding Style
 
+These rules outrank existing code. Where nearby code breaks a rule, new code follows the rule rather than the local pattern. When reviewing, report every deviation you find, including any you would excuse, and name the existing code it conflicts with.
+
 ## General
 - Use American English spelling for both code and user-facing text.
 - Use sentence case for all user-facing text.
 - Keep comments sparse and useful. Use them to explain why, not to narrate what the code already says.
 
 ## Code structure
-- Functions should always be defined below (after) where they are used in the same file, so control flow reads from top to bottom.
+- Functions should always be defined below (after) where they are used in the same file, so control flow reads from top to bottom. This includes test helpers, which go below the tests that call them; only setup and teardown (`beforeEach`/`afterEach` hooks and shared fixtures) go above the tests.
 - Functions should contain roughly a single level of abstraction. For example, a function that fetches data from an API should not be dealing with low-level HTTP request details, and a function that handles low-level HTTP requests should not be concerned with how the data is used after it is fetched.
 - Prefer method chaining (for example, `map`/`filter`) over explicit loops. However, do not use `reduce`/`aggregate`; use an explicit loop instead when a fold is needed.
 - Lean on available native methods, helper methods, and library functions and their behavior, rather than writing custom implementations. For example, if a library function throws an argument error when given an invalid input, don't check for that invalid input and throw your own error. Instead, let the library function throw the error and handle it appropriately.
