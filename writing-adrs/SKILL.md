@@ -15,7 +15,8 @@ Follow the ADR format from the domain-modeling skill's `ADR-FORMAT.md`, and laye
 - **Title:** State the decision itself, e.g. "Use Postgres for the write model".
 - **Summary:** Short plain sentences, one idea each. With more than one reason, state the context and decision in a sentence, then list the reasons as bullets.
 - **Optional sections:** One bullet per item. Write considered options as `{Option}: {why not}`.
-- **Background:** Link to code, docs, or glossary terms instead of restating them.
+- **Background:** Link to docs or glossary terms instead of restating them.
+- **Altitude:** State the decision in architectural terms, so the ADR stays true as the code moves. Name a file or type only when the decision is about that file or type; "validate inputs on the server" stands alone, and where the validation lives belongs to the code.
 
 ## Example
 
